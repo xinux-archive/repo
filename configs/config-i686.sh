@@ -1,0 +1,1 @@
+ChrootPkg=("base" "base-devel")
