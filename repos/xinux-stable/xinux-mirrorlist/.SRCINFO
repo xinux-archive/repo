@@ -1,0 +1,10 @@
+pkgbase = xinux-mirrorlist
+	pkgdesc = AlterLinux repository mirrorlists
+	pkgver = 20211010
+	pkgrel = 1
+	url = https://oss.uzinfocom.uz
+	arch = any
+	source = mirrorlist-xinux
+	sha256sums = SKIP
+
+pkgname = xinux-mirrorlist

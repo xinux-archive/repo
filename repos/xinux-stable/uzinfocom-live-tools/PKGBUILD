@@ -1,0 +1,100 @@
+remove () {
+    rm -rf "${@}"
+}
+_pkgname=(
+    "xinux-live-tools"
+    "uzinfocom-gtk-bookmarks"
+    "xinux-welcome-page"
+    "xinux-plasma-bookmarks"
+    "xinux-desktop-file"
+    "xinux-live-info"
+    "xinux-gtk-bookmarks"
+)
+
+pkgname=(${_pkgname[@]})
+_reponame="uzinfocom-live-tools"
+pkgver="1.9"
+pkgrel="1"
+pkgdesc="Scripts required for live environment"
+arch=('any')
+url="https://github.com/uzinfocom-org/${_reponame}"
+license=('SUSHI-WARE')
+depends=(
+    "xdg-user-dirs"
+    "bash"
+)
+md5sums=('ac0c2a9c7c8e34d4a7afe9f6f5f4260d')
+source=("${url}/archive/v${pkgver}.zip")
+
+extracted="${_reponame}-${pkgver}"
+#extracted="${_reponame}"
+
+install_files() {
+    _pkgname="${pkgname}"
+    cd "${srcdir}/${extracted}/${_pkgname}"
+    install -m 755 -D "${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+}
+
+install_license() {
+    _pkgname="${pkgname}"
+    cd "${srcdir}/${extracted}/"
+    install -m 755 -D "LICENSE.md" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE.md"
+}
+
+
+package_xinux-live-tools() {
+    pkgdesc="Scripts required for live environment (meta package)"
+    depends+=("${_pkgname[@]}")
+    install_license
+}
+
+package_uzinfocom-gtk-bookmarks() {
+    pkgdesc="Simple script to automatically generate GTK bookmarks"
+    replaces+=("xinux-gtk-bookmarks")
+    provides+=("xinux-gtk-bookmarks")
+    install_files
+    install_license
+}
+
+package_xinux-gtk-bookmarks(){
+    pkgdesc="Simple script to automatically generate GTK bookmarks"
+    depends=("uzinfocom-gtk-bookmarks")
+    mkdir -p "${pkgdir}/usr/bin"
+    ln -s "/usr/bin/uzinfocom-gtk-bookmarks" "${pkgdir}/usr/bin/xinux-gtk-bookmarks"
+}
+
+package_xinux-welcome-page() {
+    pkgdesc="A simple script to open the official AlterLinux website"
+    optdepends=(
+            'chromium: To open the page'
+            'google-chrome: To open the page'
+            'firefox: To open the page'
+    )
+
+    install_files
+    install_license
+}
+
+package_xinux-plasma-bookmarks() {
+    pkgdesc="Simple script to automatically generate Plasma bookmarks"
+    install_files
+    install_license
+}
+
+package_xinux-desktop-file() {
+    pkgdesc="Place the Calamares icon on your desktop"
+    depends+=("glib2")
+    install_files
+
+    cd "${srcdir}/${extracted}/"
+    install -m 755 -D "${srcdir}/${extracted}/${pkgname}/calamares.desktop" "${pkgdir}/usr/share/xinux/desktop-file/calamares.desktop"
+    install -m 755 -D "${srcdir}/${extracted}/${pkgname}/welcome-to-xinux.desktop" "${pkgdir}/usr/share/xinux/desktop-file/welcome-to-xinux.desktop"
+
+    install_license
+}
+
+package_xinux-live-info() {
+    pkgdesc="Display version information of live environment"
+    install_files
+    install_license
+}

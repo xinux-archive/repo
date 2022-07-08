@@ -1,0 +1,50 @@
+pkgbase = xinux-live-tools
+	pkgdesc = Scripts required for live environment
+	pkgver = 1.0
+	pkgrel = 1
+	url = https://github.com/uzinfocom-org/tools
+	arch = any
+	license = OSH-WARE
+	depends = xdg-user-dirs
+	depends = bash
+	source = https://github.com/uzinfocom-org/tools/archive/v1.0.zip
+	md5sums = ac0c2a9c7c8e34d4a7afe9f6f5f4260d
+
+pkgname = xinux-live-tools
+	pkgdesc = Scripts required for live environment (meta package)
+	depends = xdg-user-dirs
+	depends = bash
+	depends = xinux-live-tools
+	depends = uzinfocom-gtk-bookmarks
+	depends = xinux-welcome-page
+	depends = xinux-plasma-bookmarks
+	depends = xinux-desktop-file
+	depends = xinux-live-info
+	depends = xinux-gtk-bookmarks
+
+pkgname = uzinfocom-gtk-bookmarks
+	pkgdesc = Simple script to automatically generate GTK bookmarks
+	provides = xinux-gtk-bookmarks
+	replaces = xinux-gtk-bookmarks
+
+pkgname = xinux-welcome-page
+	pkgdesc = A simple script to open the official Xinux website
+	optdepends = chromium: To open the page
+	optdepends = google-chrome: To open the page
+	optdepends = firefox: To open the page
+
+pkgname = xinux-plasma-bookmarks
+	pkgdesc = Simple script to automatically generate Plasma bookmarks
+
+pkgname = xinux-desktop-file
+	pkgdesc = Place the Calamares icon on your desktop
+	depends = xdg-user-dirs
+	depends = bash
+	depends = glib2
+
+pkgname = xinux-live-info
+	pkgdesc = Display version information of live environment
+
+pkgname = xinux-gtk-bookmarks
+	pkgdesc = Simple script to automatically generate GTK bookmarks
+	depends = uzinfocom-gtk-bookmarks

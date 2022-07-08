@@ -1,0 +1,12 @@
+pkgname=xinux-mirrorlist
+pkgver=20211010
+pkgrel=1
+pkgdesc='Xinux repository mirrorlists'
+arch=('any')
+url='https://oss.uzinfocom.uz'
+source=("mirrorlist-xinux")
+sha256sums=('SKIP')
+package() {
+    cd "${srcdir}"
+    install -Dm644 "${srcdir}/mirrorlist-xinux" "${pkgdir}/etc/pacman.d/mirrorlist-xinux"
+}

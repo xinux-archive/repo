@@ -1,0 +1,43 @@
+pkgname=xinux-fcitx-conf
+pkgver=1.1
+pkgrel=2
+pkgdesc='Xinux fcitx Settings'
+arch=('any')
+url='https://oss.uzinfocom.uz'
+source=("https://github.com/SereneTeam/${pkgname}/archive/v${pkgver}.zip")
+conflicts=("xinux-fcitx-conf-git")
+sha256sums=('SKIP')
+
+
+build () {
+    function remove () {
+        local _list
+        local _file
+        _list=($(echo "$@"))
+        for _file in "${_list[@]}"; do
+            if [[ -f ${_file} ]]; then
+                rm -f "${_file}"
+            elif [[ -d ${_file} ]]; then
+                rm -rf "${_file}"
+            fi
+            echo "${_file} was deleted."
+        done
+    }
+    function copy () {
+        if [[ -f $1 ]]; then
+            cp $1 $2
+        elif [[ -d $1 ]]; then
+            cp -r $1 $2
+        fi
+    }
+    mkdir -p ${srcdir}/etc/skel/.config
+    cp -r ${srcdir}/${pkgname}-${pkgver}/* ${srcdir}/etc/skel/.config
+    copy ${srcdir}/${pkgname}-${pkgver}/.xprofile ${srcdir}/etc/skel/
+    remove ${srcdir}/${pkgname}-${pkgver}
+    rm v${pkgver}.zip
+}
+
+package () {
+    mkdir -p "$pkgdir"
+    cp -r * "$pkgdir"
+}

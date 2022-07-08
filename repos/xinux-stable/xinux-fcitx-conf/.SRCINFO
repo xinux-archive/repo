@@ -1,0 +1,11 @@
+pkgbase = xinux-fcitx-conf
+	pkgdesc = Xinux fcitx Settings
+	pkgver = 1.1
+	pkgrel = 2
+	url = https://oss.uzinfocom.uz
+	arch = any
+	conflicts = xinux-fcitx-conf-git
+	source = https://github.com/SereneTeam/alterlinux-fcitx-conf/archive/v1.1.zip
+	sha256sums = SKIP
+
+pkgname = xinux-fcitx-conf

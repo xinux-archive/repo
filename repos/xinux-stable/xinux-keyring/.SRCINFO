@@ -1,0 +1,13 @@
+pkgbase = xinux-keyring
+	pkgdesc = AlterLinux PGP keyring
+	pkgver = 20201117
+	pkgrel = 1
+	url = https://oss.uzinfocom.uz
+	install = xinux-keyring.install
+	arch = any
+	license = GPL
+	source = git+https://github.com/FascodeNet/alterlinux-keyring.git
+	validpgpkeys = BDC396346243AB57ACD090F9F50544048389DA36
+	sha256sums = SKIP
+
+pkgname = xinux-keyring

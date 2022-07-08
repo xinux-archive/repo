@@ -1,0 +1,9 @@
+#
+# Xinux repository mirrorlist
+#
+
+# GitHub
+Server = https://mirror.xinux.uz/$repo/$arch/
+
+# TAS-IX
+Server = https://mirror.dc.uz/xinux/$repo/$arch

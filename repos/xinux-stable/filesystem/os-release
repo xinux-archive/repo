@@ -1,0 +1,11 @@
+NAME="Xinux"
+PRETTY_NAME="Xinux"
+ID=arch
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://oss.uzinfocom.uz/"
+DOCUMENTATION_URL="https://github.com/uzinfocom-org/xinux/"
+SUPPORT_URL="https://github.com/orgs/uzinfocom-org/discussions"
+BUG_REPORT_URL="https://github.com/orgs/uzinfocom-org/discussions"
+LOGO=xinux

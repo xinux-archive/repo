@@ -1,0 +1,16 @@
+pkgname=xinux-keyring
+pkgver=20201117
+pkgrel=2
+pkgdesc='Xinux PGP keyring'
+arch=('any')
+url='https://oss.uzinfocom.uz'
+license=('GPL')
+install="${pkgname}.install"
+makedepends=("git")
+source=("git+https://github.com/FascodeNet/alterlinux-keyring.git")
+validpgpkeys=("BDC396346243AB57ACD090F9F50544048389DA36")
+sha256sums=('SKIP')
+package() {
+    cd "${srcdir}/${pkgname}"
+    make PREFIX=/usr DESTDIR="${pkgdir}" install
+}
