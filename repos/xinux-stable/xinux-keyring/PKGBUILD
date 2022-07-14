@@ -7,10 +7,11 @@ url='https://oss.uzinfocom.uz'
 license=('GPL')
 install="${pkgname}.install"
 makedepends=("git")
-source=("git+https://github.com/FascodeNet/alterlinux-keyring.git")
-validpgpkeys=("BDC396346243AB57ACD090F9F50544048389DA36")
+source=("git+https://github.com/uzinfocom-org/keyring.git")
+pkggitname=keyring
+validpgpkeys=("70ECD2076AFE8FB8CC93A798F940FBDA16E80420")
 sha256sums=('SKIP')
 package() {
-    cd "${srcdir}/${pkgname}"
+    cd "${srcdir}/${pkggitname}"
     make PREFIX=/usr DESTDIR="${pkgdir}" install
 }

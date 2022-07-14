@@ -1,5 +1,5 @@
 pkgbase = xinux-mirrorlist
-	pkgdesc = AlterLinux repository mirrorlists
+	pkgdesc = Xinux repository mirrorlists
 	pkgver = 20211010
 	pkgrel = 1
 	url = https://oss.uzinfocom.uz
