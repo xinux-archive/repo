@@ -3,6 +3,7 @@ pkgver=1.51
 pkgrel=3
 pkgdesc="A i3 setting manager for Alter Linux"
 arch=('x86_64' 'i686')
+_customname="alterlinux-i3-manager"
 url="https://github.com/FascodeNet/alterlinux-i3-manager"
 license=('GPLv3')
 depends=('qt5-base' "doxygen")
@@ -13,11 +14,11 @@ md5sums=('ca144e3192bf5ae1f0b345adfb290012')
 conflicts=()
 
 build() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
+    cd "${srcdir}/${_customname}-${pkgver}"
     make
 }
 
 package() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
+    cd "${srcdir}/${_customname}-${pkgver}"
     make -e DESTDIR="${pkgdir}" install
 }
