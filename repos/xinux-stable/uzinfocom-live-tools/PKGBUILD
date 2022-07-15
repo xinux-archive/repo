@@ -64,7 +64,7 @@ package_xinux-gtk-bookmarks(){
 }
 
 package_xinux-welcome-page() {
-    pkgdesc="A simple script to open the official AlterLinux website"
+    pkgdesc="A simple script to open the official Xinux website"
     optdepends=(
             'chromium: To open the page'
             'google-chrome: To open the page'
