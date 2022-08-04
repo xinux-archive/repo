@@ -1,6 +1,6 @@
 pkgbase = xinux-live-tools
 	pkgdesc = Scripts required for live environment
-	pkgver = 1.0
+	pkgver = 1.1
 	pkgrel = 1
 	url = https://github.com/uzinfocom-org/tools
 	arch = any
