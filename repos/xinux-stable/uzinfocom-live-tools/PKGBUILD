@@ -18,12 +18,12 @@ pkgrel="1"
 pkgdesc="Scripts required for live environment"
 arch=('any')
 url="https://github.com/uzinfocom-org/${_reponame}"
-license=('SUSHI-WARE')
+license=('OSH-WARE')
 depends=(
     "xdg-user-dirs"
     "bash"
 )
-md5sums=('e320a28a07009c8500e1c74159fd216b')
+md5sums=('bc83599b7e56c028f7f629e171253506')
 source=("${url}/archive/v${pkgver}.zip")
 
 extracted="${_reponame}-${pkgver}"
