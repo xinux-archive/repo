@@ -1,6 +1,6 @@
 pkgbase = xinux-live-tools
 	pkgdesc = Scripts required for live environment
-	pkgver = 1.1
+	pkgver = 1.2
 	pkgrel = 1
 	url = https://github.com/uzinfocom-org/tools
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = xinux-live-tools
 	depends = xdg-user-dirs
 	depends = bash
 	source = https://github.com/uzinfocom-org/tools/archive/v1.1.zip
-	md5sums = bc83599b7e56c028f7f629e171253506
+	md5sums = 91f851e5f5cbfd77dcdf4ecfcba87046
 
 pkgname = xinux-live-tools
 	pkgdesc = Scripts required for live environment (meta package)

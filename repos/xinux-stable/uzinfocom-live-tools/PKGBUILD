@@ -13,7 +13,7 @@ _pkgname=(
 
 pkgname=(${_pkgname[@]})
 _reponame="tools"
-pkgver="1.1"
+pkgver="1.2"
 pkgrel="1"
 pkgdesc="Scripts required for live environment"
 arch=('any')
@@ -23,7 +23,7 @@ depends=(
     "xdg-user-dirs"
     "bash"
 )
-md5sums=('bc83599b7e56c028f7f629e171253506')
+md5sums=('91f851e5f5cbfd77dcdf4ecfcba87046')
 source=("${url}/archive/v${pkgver}.zip")
 
 extracted="${_reponame}-${pkgver}"
